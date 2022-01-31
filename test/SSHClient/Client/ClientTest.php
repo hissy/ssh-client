@@ -6,18 +6,19 @@
 
 namespace SSHClient\Client;
 
+use PHPUnit\Framework\TestCase;
 use SSHClient\ClientBuilder\ClientBuilder;
 use SSHClient\ClientConfiguration\ClientConfiguration;
 
 use Symfony\Component\Process\Process;
 
-class ClientTest extends \PHPUnit_Framework_TestCase
+class ClientTest extends TestCase
 {
     private $process;
     private $config;
     private $builder;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->process = $this
             ->getMockBuilder(Process::class)

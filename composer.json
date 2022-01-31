@@ -1,5 +1,5 @@
 {
-    "name": "ssh-client/ssh-client",
+    "name": "hissy/ssh-client",
     "description": "Invoke OpenSSH from PHP.",
     "license": "MIT",
     "type": "library",
@@ -9,9 +9,12 @@
         }
     },
     "require": {
-        "symfony/process": "^3.0"
+        "symfony/process": "^4.4"
     },
     "require-dev": {
-        "phpunit/phpunit": "~4.8"
+        "phpunit/phpunit": "^9.5"
+    },
+    "scripts": {
+        "test": "phpunit"
     }
 }

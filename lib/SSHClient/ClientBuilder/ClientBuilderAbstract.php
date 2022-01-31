@@ -6,9 +6,8 @@
 
 namespace SSHClient\ClientBuilder;
 
-use Symfony\Component\Process\ProcessBuilder;
-
 use SSHClient\ClientConfiguration\ClientConfigurationInterface;
+use Symfony\Component\Process\Process;
 
 abstract class ClientBuilderAbstract implements ClientBuilderInterface
 {
@@ -68,7 +67,7 @@ abstract class ClientBuilderAbstract implements ClientBuilderInterface
     /**
      * @internal
      *
-     * @return \Symfony\Component\Process\ProcessBuilder
+     * @return ProcessBuilder
      */
     public function getProcessBuilder()
     {
@@ -82,9 +81,8 @@ abstract class ClientBuilderAbstract implements ClientBuilderInterface
     /**
      * This method is used in tests; calling it is not ordinarily required.
      *
-     * @param \Symfony\Component\Process\ProcessBuilder
-     *
-     * @return \SSHClient\ClientBuilder\ClientBuilderInterface
+     * @param ProcessBuilder $builder
+     * @return ClientBuilderInterface
      */
     public function setProcessBuilder(ProcessBuilder $builder)
     {
@@ -97,7 +95,7 @@ abstract class ClientBuilderAbstract implements ClientBuilderInterface
      * This method is called from a configured Client to set task-specific
      * arguments before calling getting a client process and running it.
      *
-     * @return \SSHClient\ClientBuilder\ClientBuilderInterface
+     * @return ClientBuilderInterface
      */
     public function setArguments(array $arguments)
     {
@@ -110,7 +108,7 @@ abstract class ClientBuilderAbstract implements ClientBuilderInterface
      * This method is called from a configured Client, after setting arguments,
      * so that the process can be run.
      *
-     * @return \Symfony\Component\Process
+     * @return Process
      */
     public function getProcess()
     {
