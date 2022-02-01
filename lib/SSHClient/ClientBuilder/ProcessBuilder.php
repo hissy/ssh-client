@@ -25,7 +25,7 @@ class ProcessBuilder
     private $env = [];
     private $input;
     private $timeout = 60;
-    private $options;
+    private $options = [];
     private $prefix = [];
     private $outputDisabled = false;
 
